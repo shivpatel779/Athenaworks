@@ -12,8 +12,6 @@ var {Medication} = require('./models/medication');
 var {PlanofCare} = require('./models/planofcare');
 var {Encounters} = require('./models/encounters');
 
-var demographics_controller = require('./controllers/demographicsController');
-var allergy_controller = require('./controllers/allergyController');
 
 mongoose.connect('mongodb://localhost/medical');
 
