@@ -14,8 +14,10 @@ var {Medication} = require('./models/medication');
 var {PlanofCare} = require('./models/planofcare');
 var {Encounters} = require('./models/encounters');
 
-
-mongoose.connect('mongodb://localhost/medical');
+mongoose.connect("mongodb://medical:root123@ds029821.mlab.com:29821/medical_db", function (error) {
+   if (error) console.error(error);
+   else console.log('mongo connected');
+});
 const port = process.env.PORT;
 
 var app = express();
