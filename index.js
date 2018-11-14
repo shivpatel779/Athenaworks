@@ -1,3 +1,5 @@
+require('./config/config');
+
 var bodyparser = require('body-parser');
 var express = require('express');
 var _ = require('lodash');
@@ -14,6 +16,7 @@ var {Encounters} = require('./models/encounters');
 
 
 mongoose.connect('mongodb://localhost/medical');
+const port = process.env.PORT;
 
 var app = express();
 
@@ -53,4 +56,6 @@ app.delete('/allergy/:id', (req, res) => {
 	Allergies.delete(req, res);
 });
 
-app.listen(3004);
+app.listen(port, () => {
+  console.log(`Started up at port ${port}`);
+});

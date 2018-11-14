@@ -1,0 +1,18 @@
+{
+  "test": {
+    "PORT": 3004,
+    "MONGODB_URI": "mongodb://localhost:27017/medicalTest",
+    "JWT_SECRET": "poijasdf98435jpgfdpoij3"
+  },
+  "development": {
+    "PORT": 3001,
+    "MONGODB_URI": "mongodb://localhost:27017/medical-test",
+    "JWT_SECRET": "pojiaj234oi234oij234oij4"
+  },
+
+  "production": {
+    "PORT": 3004,
+    "MONGODB_URI": "mongodb://localhost:27017/medical",
+    "JWT_SECRET": "pojiaj234oi234oij234oij4"
+  }
+}
