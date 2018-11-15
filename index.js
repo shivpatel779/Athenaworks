@@ -58,6 +58,4 @@ app.delete('/allergy/:id', (req, res) => {
 	Allergies.delete(req, res);
 });
 
-app.listen(port, () => {
-  console.log(`Started up at port ${port}`);
-});
+app.listen(3000);
