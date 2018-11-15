@@ -44,6 +44,7 @@ app.delete('/demographic/:id', (req, res) => {
 
 app.post('/allergies', (req, res) => {
 	Allergies.create(req, res);
+	res.end();
 });
 
 app.get('/allergies', (req, res) => {
@@ -58,6 +59,4 @@ app.delete('/allergy/:id', (req, res) => {
 	Allergies.delete(req, res);
 });
 
-app.listen(3004,"0.0.0.0", function() {
-    console.log('started.............',process.env.PORT);
-});
+app.listen(8000);
