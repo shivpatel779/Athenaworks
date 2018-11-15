@@ -58,4 +58,6 @@ app.delete('/allergy/:id', (req, res) => {
 	Allergies.delete(req, res);
 });
 
-app.listen(process.env.PORT || 8080)
+app.listen(process.env.PORT || 8080,'0.0.0.0', function() {
+    console.log('Listening on port %d',process.env.PORT);
+});
