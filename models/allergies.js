@@ -18,11 +18,10 @@ Allergies.statics.create = function (req, res) {
   var body = _.pick(req.body, ['allergyname', 'reaction', 'severity']);
   var allergies = new Allergies(body); 
 
- allergies.save().then((doc) => {
-    res.send(doc);
-  }, (e) => {
-    res.status(400).send(e);
-  });
+	allergies.save().then(() => {
+		res.json({message: "created"});
+	})
+	  
 };
 
 Allergies.statics.index = function (req, res) {
