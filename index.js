@@ -1,5 +1,3 @@
-require('./config/config');
-
 var bodyparser = require('body-parser');
 var express = require('express');
 var _ = require('lodash');
