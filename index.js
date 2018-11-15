@@ -29,6 +29,10 @@ app.post('/demographics', (req, res) => {
 	Demographics.create(req, res);
 });
 
+app.get('/', (req, res) => {
+	console.log("Hello");
+});
+
 app.get('/demographics', (req, res) => {
 	Demographics.index(req, res);
 });
