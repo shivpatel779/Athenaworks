@@ -1,6 +1,8 @@
+var http = require("http");
 var bodyparser = require('body-parser');
 var express = require('express');
 var _ = require('lodash');
+var path = require('path');
 
 var mongoose = require("mongoose");
 var {Allergies} = require('./models/allergies');
@@ -17,16 +19,23 @@ mongoose.connect("mongodb://medical:root123@ds029821.mlab.com:29821/medical_db",
    else console.log('mongo connected');
 });
 
-
 var app = express();
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+app.get('/', function(req, res){
+	Demographics.find(function(err, docs){
+		res.render('index');
+	});
+});
+
 app.post('/demographics', (req, res) => {
 	Demographics.create(req, res);
 });
-
 
 app.get('/demographics', (req, res) => {
 	Demographics.index(req, res);
