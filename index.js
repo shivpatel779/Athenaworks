@@ -58,4 +58,4 @@ app.delete('/allergy/:id', (req, res) => {
 	Allergies.delete(req, res);
 });
 
-app.listen(process.env.PORT || 5000)
+app.listen(process.env.PORT || 8080)
